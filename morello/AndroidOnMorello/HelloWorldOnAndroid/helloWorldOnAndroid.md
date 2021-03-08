@@ -9,13 +9,14 @@ This guide demonstrates how to create a *hello world* application, cross-compile
 
 This document covers
 1. Create the source code
-2. Build the code
-3. Run the Android Morello FVP
-4. Use the Android debug bridge (ADB) to transfer the file
-5. Run the application
+2. Set up the build environment variables
+3. Build the code
+4. Run the Android Morello FVP
+5. Use the Android debug bridge (ADB) to transfer the file
+6. Run the application
 
 
-## Assumptions:
+## Assumptions
 
 You have already installed the Morello FVP and tested that it works. 
 

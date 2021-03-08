@@ -1,4 +1,4 @@
-# Downloading and building Android on Morello FVP.
+# Downloading and building Android on Morello FVP
 
  [Go back to Morello Getting Started Guide.](./../../../morello-getting-started.md)
 
@@ -14,7 +14,9 @@ This document covers
 3. Building Android
 4. Running Android on the Morello FVP
 5. Running the Android debug bridge (ADB) to connect to the shell of the FVP
-6. Running workload tests on the FVP using the Android bridge
+6. Setting up the build environment variables for an application to run on Android
+7. Build the workload tests application
+8. Running workload tests on the FVP using the Android bridge
 
 This document largely follows the Android section (@4mins 13sec) into the video guide at the following link:
 
