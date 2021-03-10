@@ -36,6 +36,6 @@ In order to run bare metal code on the Morello Platform, a small modification is
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
 6. [Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
-7. Creating and running a bare metal "hello world" through the Arm Development Studio.
+7. [Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
 8. Buffer overflow exercise.
 9. Interfacing to the trusted firmware.

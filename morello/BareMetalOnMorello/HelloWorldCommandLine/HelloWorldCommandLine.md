@@ -4,7 +4,7 @@
  ## Overview
  This guide covers
  * Locate the example C / C++ files
- * Using the make file to compile the example code into elf binary files
+ * Use the make file to compile the example code into elf binary files
  * Format for compiling Morello code into elf binary files
  * Generate image files for the FVP
  * Locate the firmware files
@@ -24,7 +24,7 @@ Navigate to the directory where you installed the LLVM binaries `projects/bareme
 * ccall.c
 * howdy-cap-call.c - *C hello from a capability call*
 
-## Using the make file to compile the example code into elf binary files
+## Use the make file to compile the example code into elf binary files
 
 Within the `examples` directory is a `MakeFile` which can be used to compile the example code and show the different build settings. 
 
@@ -120,3 +120,4 @@ Things to note from the command line:
 -C css.cluster0.cpu0.semihosting-stack_limit=0xff000000 \
 -C css.cluster0.cpu0.semihosting-stack_base=0xffff0000
 ```
+The hello world message will be displayed in the terminal from which the Morello FVP is launched. The model stops after the program is executed.
