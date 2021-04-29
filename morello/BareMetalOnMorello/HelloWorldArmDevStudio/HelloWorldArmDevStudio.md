@@ -84,8 +84,8 @@ Things to note from the command line:
 * The `bts.bin` is loaded at the AP reset address of 0x14000000.
 * The `scp_rom.bin` is loaded into the scp cortexM7 device at 0x0.
 * The `mcp_rom.bin` is loaded into the mcp cortexM7 device at 0x0.
-* The `--run` option is set.
-* The `--cadi-server` option is set.
+* The `--run` option is set. This tells the model to start running the SCP and MCP firmware immediately.
+* The `--cadi-server` option is set. This tells the model to launch a CADI server.
 
 ```
 ./models/Linux64_GCC-6.4/FVP_Morello \
