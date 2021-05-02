@@ -46,5 +46,5 @@ This section explains more about the set up of bare metal on Morello. It is wort
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 ### Bare Metal Examples
 This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository.
-1. [Cloning and Importing the Examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
+1. [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 1. [Hello World at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
