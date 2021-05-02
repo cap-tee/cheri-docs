@@ -28,8 +28,9 @@ Content to be added.
 
 ## Bare Metal on Morello
 ### Bare Metal Overview
-In order to run bare metal code on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform.
-### Bare Metal Documents
+In order to run bare metal code on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
+### Bare Metal Getting Started
+This section is a gentle introduction to get you setup for bare metal coding on Morello.
 1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) 
 2. [Using Yocto bitbake to generate bare metal firmware.](./morello/BareMetalOnMorello/YoctoBitbake/YoctoBitbake.md)
 3. Building bare metal firmware from cloning the SCP Firmware and Trusted Firmware-A Morello git projects.
@@ -39,3 +40,11 @@ In order to run bare metal code on the Morello Platform, a small modification is
 7. [Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
 8. Buffer overflow exercise.
 9. Interfacing to the trusted firmware.
+### Bare Metal Default Configuration Setup for Morello
+This section explains more about the set up of bare metal on Morello. It is worth reading if you wish to do more than just run the examples. 
+1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
+2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
+### Bare Metal Examples
+This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository.
+1. [Cloning and Importing the Examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
+1. [Hello World at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
