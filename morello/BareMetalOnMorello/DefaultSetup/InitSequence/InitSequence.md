@@ -48,6 +48,8 @@ The MMU is initialised at EL3 for DRAM0 by default. The set up is for flat mappi
 
 The TTBR0_EL3 register specifies the translation.
 
+See [Understanding the default MMU set up at EL3](./../MMU/MMU.md) for a more detailed look at the default MMU set up
+
 ## Making Changes to the Default set up
 With the default set up, it is assumed that any bare metal code will be written at EL3 in C/C++, and is only using the DRAM0 memory region. If you wish to make changes to the default set up, then there are a number of options available:
 

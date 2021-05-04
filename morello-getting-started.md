@@ -44,7 +44,11 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 This section explains more about the set up of bare metal on Morello. It is worth reading if you wish to do more than just run the examples. 
 1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
+3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
 ### Bare Metal Examples
 This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository.
-1. [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
-1. [Hello World at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
+
+[Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
+
+1. [HelloWorld - Outputs "Hello World" to the console at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
+2. [MMUEL3 - Changing the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
