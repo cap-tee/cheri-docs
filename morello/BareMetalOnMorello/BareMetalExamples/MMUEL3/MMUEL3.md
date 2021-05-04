@@ -53,7 +53,7 @@ Ensure that you have already launched the FVP model. Double click `MMUEL3Debug.L
 ## Run the Code
 In the **Debug Control** window, Either run or step through the code. Check the MMU/MP window to check the translation has worked. A message will appear in the console to indicate the mmu was changed.
 
-![Morello MMU at EL3](./MMUEL3NewDevStudMem.png)
-![Morello MMU at EL3](./MMUEL3NewDevStudTrans.png)
+![New MMU at EL3 map](./MMUEL3newDevStudMem.png)
+![New MMU at EL3 trans](./MMUEL3newDevStudTrans.png)
 
 To stop the software and FVP, firstly disconnect the target from within Development Studio, and then type `CTRL+C` in the console from which the FVP was launched.
