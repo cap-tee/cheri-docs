@@ -51,4 +51,5 @@ This section guides you through the bare metal example code which can be found i
 [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 
 1. [HelloWorld - Outputs "Hello World" to the console at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
-2. [MMUEL3 - Changing the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
+2. [MMUEL3 - Changes the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
+3. [EL3ToEL1 - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md)
