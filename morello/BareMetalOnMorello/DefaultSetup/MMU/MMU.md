@@ -41,8 +41,8 @@ Each of the MAIR Attributes can be set as one of the following:
 * **Device Memory:**
     * hex:0x00  bin:0000 0000   - Device-nGnRnE
     * hex:0x04  bin:0000 0100   - Device-nGnRE
-    * hex:0x08  bin:0000 1000   - Device-nGnRE
-    * hex:0x0C  bin:0000 1100   - Device-nGnRE
+    * hex:0x08  bin:0000 1000   - Device-nGRE
+    * hex:0x0C  bin:0000 1100   - Device-GRE
 * **Normal Memory:**
     * First byte:
         * hex:0x0               bin:0000     - ?
