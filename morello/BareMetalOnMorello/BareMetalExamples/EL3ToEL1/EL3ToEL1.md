@@ -7,7 +7,7 @@ This example sets up a LLVM-LD linker script to define secure and non-secure reg
 
 **Limitations:** 
 
-Because this code is performed after the initialisation sequence, and from `main()` (see [](./) for more details), the C library functions are stored in the same memory region as the secure code at EL3. This means that after an ERET to the normal world, although the normal world code is stored in non-secure memory, any C function calls will jump to a secure memory location.
+Because this code is performed after the initialisation sequence, and from `main()` ([Understanding the default initialisation sequence for Morello.](./../../../../morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)), the C library functions are stored in the same memory region as the secure code at EL3. This means that after an ERET to the normal world, although the normal world code is stored in non-secure memory, any C function calls will jump to a secure memory location.
 
 If it is required that bare metal code to be run in the normal world using C functions it would be better to ERET to EL1N during the initalisation sequence, so that the C libraries are stored in non-secure memory. This would require a new initialisation sequence to be written, with a new image entry point.
 
