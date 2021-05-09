@@ -22,7 +22,7 @@ The linker script specifies two memory regions within DRAM0 which is 2GB in size
 
 Program code is assigned to each region, together with seperate stacks for EL1S and EL1N.
 
-Examples of linker scripts for the LLVM-LD Linker can be found here:
+Further information and examples of linker scripts for the LLVM-LD Linker can be found here:
 
 https://www.math.utah.edu/docs/info/ld_3.html 
 
