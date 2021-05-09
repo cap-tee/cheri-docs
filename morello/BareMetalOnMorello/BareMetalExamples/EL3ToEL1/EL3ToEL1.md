@@ -11,7 +11,7 @@ Because this code is performed after the initialisation sequence, and from `main
 
 If it is required that bare metal code to be run in the normal world using C functions it would be better to ERET to EL1N during the initalisation sequence, so that the C libraries are stored in non-secure memory. This would require a new initialisation sequence to be written, with a new image entry point.
 
-In the Morello set up, normal world code can be loaded as part of the boot load sequence at BL33 and is a seperate executable.
+In the Morello set up, normal world code can be loaded as part of the boot load sequence at BL33 and is compiled as a seperate executable.
 
 
 ## Linker Script and Specifying Memory Regions
@@ -53,6 +53,8 @@ Look at the code in the EL3entry.c file and modify as necessary to perform eithe
 ## Check Where in Memory the Program Code will be Loaded
 
 To check where the different parts of the program has been loaded in memory, open the ELF EL3ToEL1.axf file found under **Debug -> src**. Drag the file into the window to open. Here you can inspect the header, sections, and disassembly. 
+
+![Memory regions](./EL3ToEL1Diss.png)
 
 ## Connect to the FVP Model
 Ensure that you have already launched the FVP model. Double click `EL3ToEL1Debug.Launch` and then select `Debug`. The Debugger should connect to the target. 
