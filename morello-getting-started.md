@@ -28,7 +28,7 @@ Content to be added.
 
 ## Bare Metal on Morello
 ### Bare Metal Overview
-In order to run bare metal code on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
+In order to run bare metal code on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
 ### Bare Metal Getting Started
 This section is a gentle introduction to get you setup for bare metal coding on Morello.
 1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) 
@@ -46,10 +46,11 @@ This section explains more about the set up of bare metal on Morello. It is wort
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
 ### Bare Metal Examples
-This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](./https://github.com/cap-tee/morello-baremetal-examples) repository.
+This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository.
 
 [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 
 1. [HelloWorld - Outputs "Hello World" to the console at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
 2. [MMUEL3 - Changes the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
 3. [EL3ToEL1 - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md)
+4. [EL3MMUToEL1MMU - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md)
