@@ -54,5 +54,5 @@ This section guides you through the bare metal example code which can be found i
 2. [MMUEL3 - Changes the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
 3. [EL3ToEL1 - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md)
 4. [EL3MMUToEL1MMU - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md)
-5. [EL3MMUUART - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUART/EL3MMUUART.md)
+5. [EL3MMUUART - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUart/EL3MMUUart.md)
 6. [EL3MMUToEL1MMUUART - Changes Exception level to either EL1S or EL1N and sets up the MMUs and uart, and writes a message. It also sets up secure & non-secure memory regions.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMUUART/EL3MMUToEL1MMUUART.md)
