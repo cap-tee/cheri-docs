@@ -50,9 +50,12 @@ This section guides you through the bare metal example code which can be found i
 
 [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 
-1. [HelloWorld - Outputs "Hello World" to the console at EL3.](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md)
-2. [MMUEL3 - Changes the MMU set up at EL3 for Morello.](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md)
-3. [EL3ToEL1 - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md)
-4. [EL3MMUToEL1MMU - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md)
-5. [EL3MMUUART - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUart/EL3MMUUart.md)
-6. [EL3MMUToEL1MMUUART - Changes Exception level to either EL1S or EL1N and sets up the MMUs and uart, and writes a message. It also sets up secure & non-secure memory regions.](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMUUART/EL3MMUToEL1MMUUART.md)
+1. [HelloWorld](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md) - Outputs "Hello World" to the console at EL3.
+2. [MMUEL3](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md) - Changes the MMU set up at EL3 for Morello.
+3. [EL3ToEL1](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure
+4. [EL3MMUToEL1MMU](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.
+5. [EL3MMUUART](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUart/EL3MMUUart.md) - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.
+6. [EL3MMUToEL1MMUUART](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMUUART/EL3MMUToEL1MMUUART.md) - Changes Exception level to either EL1S or EL1N and sets up the MMUs and uart, and writes a message. It also sets up secure & non-secure memory regions.
+7. [EL3MMUTimerInterrupt
+](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUTimerInterrupt/EL3MMUTimerInterrupt.md) -  sets up the mmu at EL3, installs the vector tables for exception handling, sets up the interrupt controller, and performs a timer interrupt.
+8. [EL3MMUEL1MMUUARTtimerInterrupt](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUEL1MMUUARTtimerInterrupt/EL3MMUEL1MMUUARTtimerInterrupt.md) - sets up the mmu at EL3, installs the vector tables for exception handling, sets up the interrupt controller, and performs a secure timer interrupt. Changes Exception level to either EL1S or EL1N and sets up the MMUs and uart, and performs another timer interrupt (secure timer in EL1S and non secure timer in EL1N). It also sets up secure & non-secure memory regions.
