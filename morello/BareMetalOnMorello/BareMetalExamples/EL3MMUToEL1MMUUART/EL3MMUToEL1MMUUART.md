@@ -50,17 +50,17 @@ Program code is assigned to each region, together with seperate stacks for EL1S 
 
 The MMUs are set up as follows:
 * EL3MMU
-    *  0x00000000 - 1GB device memory
+    *  0x00000000 - 1GB device memory - UART base address 0x1C090000
     *  0x40000000 - 1GB device memory
     *  0x80000000 - 1GB program memory
     *  0xC0000000 - 1GB program memory
 * EL1SMMU
-    *  0x00000000 - 1GB device memory
+    *  0x00000000 - 1GB device memory - UART base address 0x1C090000
     *  0x40000000 - 1GB device memory
     *  0x80000000 - 1GB program memory
     *  0xC0000000 - 1GB invalid
 * EL1NMMU
-    *  0x00000000 - 1GB device memory
+    *  0x00000000 - 1GB device memory - UART base address 0x1C090000
     *  0x40000000 - 1GB device memory
     *  0x80000000 - 1GB invalid
     *  0xC0000000 - 1GB program memory
