@@ -82,7 +82,7 @@ For the two stage set up, the device memory regions are firstly translated to a 
 
 In both stages of translation the VA/IPA/PA use a 36 bit address space. These are defined by setting the correct fields within the stage 1 register (TCR_EL1) and stage 2 register (VTCR_EL2). The set up of these fields are summarised in the two stage translation diagram, and described here in full since their values are not straight forward.
 
-For stage one translation the T0SZ[5:0] field of the TCR_EL1 specifies the VA bit width. the value within the T0SZ field is the number that needs to be extracted from 64 to arrive at the required bit width. For example if 36 bits are required, then the T0SZ field will need to be loaded with the value #28 (or hex #0x1C), and not 36 (`64 - 28 = 36 bits`). See TCR_EL1 register definition https://developer.arm.com/documentation/ddi0595/2020-12/AArch64-Registers/TCR-EL1--Translation-Control-Register--EL1-?lang=en#fieldset_0-34_32 
+For stage one translation the T0SZ[5:0] field of the TCR_EL1 specifies the VA bit width. the value within the T0SZ field is the number that needs to be subtracted from 64 to arrive at the required bit width. For example if 36 bits are required, then the T0SZ field will need to be loaded with the value #28 (or hex #0x1C), and not 36 (`64 - 28 = 36 bits`). See TCR_EL1 register definition https://developer.arm.com/documentation/ddi0595/2020-12/AArch64-Registers/TCR-EL1--Translation-Control-Register--EL1-?lang=en#fieldset_0-34_32 
 
 The IPS[34:32] field of the TCR_EL1 specifies the IPA bit width which is encoded in a different format using 3 bits. The specified bit width needs to be in the range 32 to 52, incrementing in twos.
 
