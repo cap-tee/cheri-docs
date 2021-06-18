@@ -45,6 +45,8 @@ see [EL1ToEL3SMC](./../EL1ToEL3SMC/EL1ToEL3SMC.md) for a diagram of the program 
 * **EL1 Secure** - Secure physical Timer (Interrupt ID 29)
 * **EL1 Non secure** - non secure physical Timer (Interrupt ID 30)
 
+see [EL3MMUTimerInterrupt](./../EL3MMUTimerInterrupt/EL3MMUTimerInterrupt.md) for more information about using the timer.
+
 **MMU set up:**
 The MMUs are set up as follows:
 * EL3MMU
