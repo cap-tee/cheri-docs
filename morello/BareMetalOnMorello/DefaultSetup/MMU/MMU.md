@@ -4,6 +4,8 @@
 
 The MMU is the memory management unit and controls the translation between virtual and physical memory regions. A translation table, together with a number of registers is required at each exception level to instruct the MMU on how to translate the different regions. For the Morello bare metal set up, a translation table for EL3 is defined within the default initialisation sequence.
 
+A good introduction to memory management can be found here: https://developer.arm.com/documentation/101811/0101/What-is-memory-management
+
 ## Translation Table Format
 
 Translation tables are stored in memory as 64 bit entries split into two lots of 32 bits (lower, and upper). Each entry can be one of three types: Invalid (entry ignored), Block (defines memory region), or Table (address/properties of next table). See https://armv8-ref.codingbelief.com/en/chapter_d4/d43_1_vmsav8-64_translation_table_descriptor_formats.html 
