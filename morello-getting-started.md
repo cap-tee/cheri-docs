@@ -18,7 +18,7 @@ Android can be installed to run on top of the Morello FVP.
 1. [Downloading and building Android on Morello FVP.](./morello/AndroidOnMorello/BuildingMorelloAndroid/BuildingAndroidOnMorello.md)
 2. Understanding the Repo Tool and the Morello Android Manifest Hierarchy.
 3. [Creating and running a "hello world" application on Android-Morello.](./morello/AndroidOnMorello/HelloWorldOnAndroid/helloWorldOnAndroid.md)
-3. Buffer overflow exercise 
+
 
 ## CheriBSD on Morello
 ### CheriBSD on Morello Overview
@@ -28,7 +28,7 @@ Content to be added.
 
 ## Bare Metal on Morello
 ### Bare Metal Overview
-In order to run bare metal code on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
+In order to run bare metal code (code starting at EL3 without the trusted firmware) on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
 ### Bare Metal Getting Started
 This section is a gentle introduction to get you setup for bare metal coding on Morello.
 1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) 
@@ -38,8 +38,7 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
 6. [Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
 7. [Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
-8. Buffer overflow exercise.
-9. Interfacing to the trusted firmware.
+
 ### Bare Metal Default Configuration Setup for Morello
 This section explains more about the set up of bare metal on Morello. It is worth reading if you wish to do more than just run the examples. 
 1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
