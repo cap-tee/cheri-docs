@@ -20,7 +20,7 @@ Bare metal programs are loaded into DRAM0 memory by default, starting at the bas
 It is possible to change the base address at which the program is loaded into memory through a linker command line option. 
 
 ```
---image-base 0x80000000
+--image-base=0x80000000
 ```
 In Development Studio select the project you wish to change and right-click. Select **Properties -> C/C++ Build -> Settings -> LLVM C Linker 11.0.0 -> Miscellaneous** and then add the command line to the **-Xlinker** options. After the project is re-built the ELF file should now show the new image entry point address (with the offset).
 
