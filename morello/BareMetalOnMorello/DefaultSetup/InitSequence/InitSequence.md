@@ -17,6 +17,12 @@ For the Morello Platform some specific initialisation code is included such as t
 
 ## Morello Initialisation Code
 
+The Morello initialisation source code can be found in the **newlib** repository of Morello in a file called `crt0.S`.
+
+https://git.morello-project.org/morello/newlib/-/blob/morello/release-1.0/libgloss/aarch64/crt0.S
+
+The initialisation code does the following:
+
 ### Initialise Control Registers
 The following control registers are initialised by default:
 * **CPACR_EL1** - Architectural Feature Access Control Register. Controls access to trace, SVE, Advanced SIMD and floating-point, and the Morello architecture.
