@@ -1,5 +1,5 @@
 # Morello Getting Started Guide
-This Document provides an overview of Cheri with the Morello Platform and links to other documents in this repository.
+This Document provides an overview of Cheri with the Morello Platform and links to other documents in this repository. This is a work in progress, and new content will be added on a continuous basis throughout the project. The examples documented here are intended for research purposes associated with the Morello Platform.
 
 ## Morello Platform
 ### Morello Platform Overview
@@ -44,8 +44,9 @@ This section explains more about the set up of bare metal on Morello. It is wort
 1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
-### Bare Metal Examples
-This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository.
+
+### Bare Metal Examples (Starting at EL3)
+This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository. The examples are used with Development Studio. Note that none of these examples have yet been tested with CHERI.
 
 [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 
@@ -61,3 +62,43 @@ This section guides you through the bare metal example code which can be found i
 9. [EL1ToEL3SMC](./morello/BareMetalOnMorello/BareMetalExamples/EL1ToEL3SMC/EL1ToEL3SMC.md) - example showing how to use the SMC instruction to call into EL3 from either EL1N (normal world) or EL1S (secure world).
 10. [EL1NToEL3ToEL1SSMC](./morello/BareMetalOnMorello/BareMetalExamples/EL1NToEL3ToEL1SSMC/EL1NToEL3ToEL1SSMC.md) - example showing how to pass messages between EL1N (normal world) and EL1S (secure world) using SMC.
 11. [EL2](./morello/BareMetalOnMorello/BareMetalExamples/EL2/EL2.md) - example showing how to use the EL2N Hypervisor mode to perform a two stage memory translation for EL1N, and restrict EL1N from reading and writing to the EL1N MMU memory registers. 
+
+### Boot Flow Examples (Stand-a-lone programs, e.g targeted for EL2N only)
+This section guides you through some boot flow examples on Morello. Code can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository under `commandLine/bootflow` unless specified otherwise. Some examples require **Development Studio**, and allow you to step through code and check memory contents. Note that none of these examples have yet been tested with CHERI.
+
+[The trusted boot flow](./morello/BootFlowOnMorello/BootFlowOverview/BootFlowOverview.md)
+
+
+**EL3**
+
+These examples use the bare metal llvm compiler with the [default morello initialisation code](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md) by-passed, so that the **image entry point** is `main`. You would not wish to by-pass initialisation code normally, but the purpose is to test and prepare for EL2 code.
+
+
+1. [EL3_s_loop - Loading an assembly program at EL3](./morello/BootFlowOnMorello/BootFlowExamples/EL3_s_loop/EL3_s_loop.md) - This example shows how to load a small assembly program which sits in a loop at EL3. The boot flow process is stopped at EL3 by the AP reset address.
+
+2. [EL3_c_loop - Loading programs at EL3](./morello/BootFlowOnMorello/BootFlowExamples/EL3_c_loop/EL3_c_loop.md) - This example shows how to load a small c program which sits in a loop at EL3. The boot flow process is stopped at EL3 by the AP reset address.
+
+**EL2N**
+
+These examples use the bare metal llvm compiler with the [default morello initialisation code](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md) by-passed, so that the **image entry point** is `main`.
+
+
+1. [EL2N_s_loop - Loading an assembly program at EL2](./morello/BootFlowOnMorello/BootFlowExamples/EL2N_s_loop/EL2N_s_loop.md) - This example shows how to load a small assembly program at EL2N (BL33) in place of the UEFI boot as part of the Android Morello boot flow process.
+
+
+2. [EL2N_c_loop - Loading programs at EL2N](./morello/BootFlowOnMorello/BootFlowExamples/EL2N_c_loop/EL2N_c_loop.md) - This example shows how to load a small program at EL2N (BL33) in place of the UEFI boot as part of the Android Morello boot flow process.
+
+
+
+**EL2N - Trusted Firmware Tests**
+
+These examples use the bare metal llvm compiler with a basic **morello initialisation code for EL2**, so that the **image entry point** is `_startel2`.
+
+1. [developmentStudio/trustedFW_EL2](./morello/BootFlowOnMorello/BootFlowExamples/TrustedFirmware/TrustedFirmwareDS.md) - Trusted Firmware Tests. Basic tests to interface to the trusted firmware - this example follows the boot flow to EL2, and then loads an EL2 program from **Development Studio** to interact with the trusted firmware (at EL3).
+
+2. [commandLine/bootflow/trustedFW_EL2](./morello/BootFlowOnMorello/BootFlowExamples/TrustedFirmware/TrustedFirmwareBF.md) - Trusted Firmware Tests. Basic tests to interface to the trusted firmware -  this example loads an EL2 program from the command line as part of the boot flow to interact with the trusted firmware (at EL3).
+
+
+
+
+
