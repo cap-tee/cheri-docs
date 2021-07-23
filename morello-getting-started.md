@@ -96,7 +96,7 @@ These examples use the bare metal llvm compiler with a basic **morello initialis
 
 1. [developmentStudio/trustedFW_EL2](./morello/BootFlowOnMorello/BootFlowExamples/TrustedFirmware/TrustedFirmwareDS.md) - Trusted Firmware Tests. Basic tests to interface to the trusted firmware - this example follows the boot flow to EL2, and then loads an EL2 program from **Development Studio** to interact with the trusted firmware (at EL3).
 
-2. [commandLine/bootflow/trustedFW_EL2](./morello/BootFlowOnMorello/BootFlowExamples/TrustedFirmware/TrustedFirmwareBF.md) - Trusted Firmware Tests. Basic tests to interface to the trusted firmware -  this example loads an EL2 program from the command line as part of the boot flow to interact with the trusted firmware (at EL3).
+2. [commandLine/bootflow/trustedFW_EL2](./morello/BootFlowOnMorello/BootFlowExamples/TrustedFirmware/TrustedfirmwareBF.md) - Trusted Firmware Tests. Basic tests to interface to the trusted firmware -  this example loads an EL2 program from the command line as part of the boot flow to interact with the trusted firmware (at EL3).
 
 
 
