@@ -15,3 +15,7 @@
   ## Compiling with LLVM bare metal for EL2N
 
   At the time of writing, it was not possible to use the default setup of the LLVM bare metal compiler to compile programs directly for EL2N. The examples for EL2N refered to in this repository either by-pass the _start function containing the morello initialisation code for EL3, or use one created by the author and supplied with the examples. 
+
+  ## Further information 
+
+  * Trusted Firmware and boot flow: https://chromium.googlesource.com/chromiumos/third_party/arm-trusted-firmware/+/factory-strago-7458.B/docs/firmware-design.md 
