@@ -31,13 +31,7 @@ The MMU is set up as follows:
 
 ## PL011 UART
 
-Documentation and register offsets for the pl011 uart are detailed here:
-
-Technical Reference Manual: https://developer.arm.com/documentation/ddi0183/latest/ 
-
-An ARM example using the pl011 uart (in a different way to used here - the example retargets c functions) can be found here:
-
-https://developer.arm.com/documentation/102440/0100/Retarget-functions-to-use-UART
+This example uses the pl011 uart at a base address of 0x1C090000.
 
 ## Build the Project
 
