@@ -62,6 +62,7 @@ This section guides you through the bare metal example code which can be found i
 9. [EL1ToEL3SMC](./morello/BareMetalOnMorello/BareMetalExamples/EL1ToEL3SMC/EL1ToEL3SMC.md) - example showing how to use the SMC instruction to call into EL3 from either EL1N (normal world) or EL1S (secure world).
 10. [EL1NToEL3ToEL1SSMC](./morello/BareMetalOnMorello/BareMetalExamples/EL1NToEL3ToEL1SSMC/EL1NToEL3ToEL1SSMC.md) - example showing how to pass messages between EL1N (normal world) and EL1S (secure world) using SMC.
 11. [EL2](./morello/BareMetalOnMorello/BareMetalExamples/EL2/EL2.md) - example showing how to use the EL2N Hypervisor mode to perform a two stage memory translation for EL1N, and restrict EL1N from reading and writing to the EL1N MMU memory registers. 
+12. [EL3UARTredirect](./morello/BareMetalOnMorello/BareMetalExamples/EL3UARTredirect/EL3UARTredirect.md) - example showing how to redirect an embedded printf function to the uart. 
 
 ### Boot Flow Examples (Stand-a-lone programs, e.g targeted for EL2N only)
 This section guides you through some boot flow examples on Morello. Code can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository under `commandLine/bootflow` unless specified otherwise. Some examples require **Development Studio**, and allow you to step through code and check memory contents. Note that none of these examples have yet been tested with CHERI.
