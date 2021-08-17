@@ -16,7 +16,8 @@ The rest of the documentation builds upon the Morello Platform. Software stacks 
 Android can be installed to run on top of the Morello FVP.
 ### Android on Morello Documents
 1. [Downloading and building Android on Morello FVP.](./morello/AndroidOnMorello/BuildingMorelloAndroid/BuildingAndroidOnMorello.md)
-2. Understanding the Repo Tool and the Morello Android Manifest Hierarchy.
+2. [Understanding the Repo Tool and the Morello Android Manifest Hierarchy.](./morello/AndroidOnMorello/RepoTool/RepoTool.md)
+
 3. [Creating and running a "hello world" application on Android-Morello.](./morello/AndroidOnMorello/HelloWorldOnAndroid/helloWorldOnAndroid.md)
 
 

@@ -10,7 +10,7 @@ Two approaches are detailed here for running bare metal code. The first approach
 
 ## Firmware
 
-For both approaches the minimum firmware required is the SCP/MCP and the Trusted Firmware-A. This amounts to the following files, where the `scp_fw.bin` encompasses both the scp ram firmware and the trusted firmware.
+For both approaches the minimum firmware required is the SCP/MCP and the Trusted Firmware-A. This amounts to the following files, where the `scp_fw.bin` encompasses both the scp ram firmware and the trusted firmware. Note that although the trusted firmware is present, it is not loaded because the SCP firmware is modified so that baremetal code can be run at EL3 instead.
 
 `scp_romfw.elf, mcp_romfw.elf, scp_fw.bin`
 
