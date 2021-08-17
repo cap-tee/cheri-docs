@@ -28,7 +28,7 @@ Content to be added.
 
 ## Bare Metal on Morello
 ### Bare Metal Overview
-In order to run bare metal code (code starting at EL3 without the trusted firmware) on the Morello Platform, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
+In order to run bare metal code (code starting at EL3 without the trusted firmware) on the Morello Platform (version 0.11_9), a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
 ### Bare Metal Getting Started
 This section is a gentle introduction to get you setup for bare metal coding on Morello.
 1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) 
@@ -44,9 +44,12 @@ This section explains more about the set up of bare metal on Morello. It is wort
 1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
+4. [Important information for writing programs for Morello - things that might catch you out](./morello/BareMetalOnMorello/DefaultSetup/Important/Important.md)
 
 ### Bare Metal Examples (Starting at EL3)
-This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository. The examples are used with Development Studio. Note that none of these examples have yet been tested with CHERI.
+This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository. The examples are used with Development Studio. 
+
+Note that these examples have been tested with Development Studio version `armds-morello-edition-2020-1m0.tgz`, FVP version `FVP_Morello_0.11_9` and LLVM version `bare-metal-release-1.0`. Also none of these examples have yet been tested with CHERI.
 
 [Cloning and Importing the examples into Development Studio.](./morello/BareMetalOnMorello/BareMetalExamples/DownloadingExamples/DownloadingExamples.md)
 
@@ -65,7 +68,9 @@ This section guides you through the bare metal example code which can be found i
 12. [EL3UARTredirect](./morello/BareMetalOnMorello/BareMetalExamples/EL3UARTredirect/EL3UARTredirect.md) - example showing how to redirect an embedded printf function to the uart. 
 
 ### Boot Flow Examples (Stand-a-lone programs, e.g targeted for EL2N only)
-This section guides you through some boot flow examples on Morello. Code can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository under `commandLine/bootflow` unless specified otherwise. Some examples require **Development Studio**, and allow you to step through code and check memory contents. Note that none of these examples have yet been tested with CHERI.
+This section guides you through some boot flow examples on Morello. Code can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository under `commandLine/bootflow` unless specified otherwise. Some examples require **Development Studio**, and allow you to step through code and check memory contents. 
+
+Note that these examples have been tested with Development Studio version `armds-morello-edition-2020-1m0.tgz`, FVP version `FVP_Morello_0.11_9` and LLVM version `bare-metal-release-1.0`. Also none of these examples have yet been tested with CHERI.
 
 [The trusted boot flow](./morello/BootFlowOnMorello/BootFlowOverview/BootFlowOverview.md)
 
