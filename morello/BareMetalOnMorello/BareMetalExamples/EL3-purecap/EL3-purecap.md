@@ -87,6 +87,8 @@ For low-level coding where system registers and capability registers are manipul
 
 In the examples used here, only the `__CHERI_PURE_CAPABILITY__` is checked for since we are only compiling for *Morello*, or *Morello-purecap*, but the others need to be included in the settings because initialisation code built into the llvm compiler still use them. (since we can not have pure capability without the `__ARM_FEATURE_C64`. Also, `__CHERI__` was used for hybrid capability and is legacy).
 
+![Capability structure](./pure-popTable.png)
+
 For automatic preprocessing by the **LLVM compiler** the assembly file **must have** an **uppercase** `S` extension.
 
 ## Build the Project
