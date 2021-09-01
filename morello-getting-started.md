@@ -58,7 +58,7 @@ Note that these examples have been tested with Development Studio version `armds
 
 1. [HelloWorld](./morello/BareMetalOnMorello/BareMetalExamples/HelloWorld/HelloWorld.md) - Outputs "Hello World" to the console at EL3. `purecap`
 2. [EL3-purecap](./morello/BareMetalOnMorello/BareMetalExamples/EL3-purecap/EL3-purecap.md) - performs some low level capability tests in assembly to test and explore basic CHERI functionality. `purecap` 
-3. [MMUEL3](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md) - Changes the MMU set up at EL3 for Morello.
+3. [MMUEL3](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md) - Changes the MMU set up at EL3 for Morello. `purecap`
 4. [EL3ToEL1](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure
 5. [EL3MMUToEL1MMU](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.
 6. [EL3MMUUART](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUart/EL3MMUUart.md) - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.
