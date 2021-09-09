@@ -22,13 +22,11 @@ The program performs a number of basic capability operations using the capabilit
 
 **DDC**
 
-The DDC is used as the base capability which, on reset, has all permissions set and the bounds extend to the full memory from 0x00000000 00000000 to 0xFFFFFFFF FFFFFFFF. Further data capabilities can be derived from this. It is also possible to manipulate DDC by reducing its bounds and permissions, clearing all values completely, or even deriving a new capability from another capability register. 
-
-Within this example code all new capabilities are derived from DDC. However the default initialisation code (prior to main) clears this register and so the example code firstly derives a new DDC capability from another capability register.
+The DDC is used as the base capability which, on reset, has all permissions set and the bounds extend to the full memory from 0x00000000 00000000 to 0xFFFFFFFF FFFFFFFF. Further data capabilities can be derived from this. It is also possible to manipulate DDC by reducing its bounds and permissions, clearing all values completely, or loading it with a capability derived from another capability register. 
 
 **Capability 1 - pointer to a memory location in which to read and write data**
 
-Within the example code, capability 1 (c1) is derived from the DDC, and is a pointer to a memory location in which to read and write data into a table in memory. The value field holds the address of the memory location. Since it is not easily observable as to what the bounds of the capability are due to its compressed format, a number of instructions can be used to uncompress them into a readable register:
+Within the example code, capability 1 (c1) is a pointer to a memory location in which to read and write data into a table in memory. The value field holds the address of the memory location. Since it is not easily observable as to what the bounds of the capability are due to its compressed format, a number of instructions can be used to uncompress them into a readable register:
 
 * `GCBASE` - get the **base bounds** of the capability and put it into an ordinary register for reading. This operation uncompresses the base format.
 * `GCLIM` - get the **limit bounds** of the capability and put it into an ordinary register for reading. This operation uncompresses the limit format.
@@ -63,7 +61,7 @@ It is only possible to reduce the permissions of a capability, not increase them
 
 **Capability 2 - Storing and loading a capability into memory**
 
-It is possible to store and load capabilities in memory. In order to do this a second capability pointer (c2) is required, which points to the memory location of where the first capability is to be stored. The example code explores storing and loading capabilities.
+It is possible to store and load capabilities in memory. In order to do this a second capability pointer (c2) is used, which points to the memory location of where the first capability is to be stored. The example code explores storing and loading capabilities.
 
 * `STR` - store capability into a memory location
 * `LDR` - load capability from a memory location
@@ -81,11 +79,10 @@ It is possible to store and load capabilities in memory. In order to do this a s
 
 For low-level coding where system registers and capability registers are manipulated directly within assembly code, the following LLVM compiler options are translated to preprocess code as follows:
 
-* target: morello ->      `__CHERI__`
 * target: +c64 -> `__ARM_FEATURE_C64`
 * abi: purecap -> `__CHERI_PURE_CAPABILITY__`
 
-In the examples used here, only the `__CHERI_PURE_CAPABILITY__` is checked for since we are only compiling for *Morello*, or *Morello-purecap*, but the others need to be included in the settings because initialisation code built into the llvm compiler still use them. (since we can not have pure capability without the `__ARM_FEATURE_C64`. Also, `__CHERI__` was used for hybrid capability and is legacy).
+In the examples used here, only the `__CHERI_PURE_CAPABILITY__` is used since we are only compiling for *Morello*, or *Morello-purecap*, but the others need to be included in the compiler settings because code still use them (including the initialisation code built into the llvm compiler). 
 
 ![Capability structure](./pure-popTable.png)
 
