@@ -29,11 +29,12 @@ Content to be added.
 
 ## Bare Metal on Morello
 ### Bare Metal Overview
-In order to run bare metal code (code starting at EL3 without the trusted firmware) on the Morello Platform (version 0.11_9), a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. Alternatively, the necessary files can be cloned from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository for convenience.
+In order to run bare metal code (code starting at EL3 without the trusted firmware) on the Morello Platform for `version 0.11_9 - Feb 21`, a small modification is needed to the SCP source code, and then re-built. The Yocto bitbake recipe installed with android is a convienient method to re-build the firmware as it is already set up with the correct build options for the FVP Morello Platform. The latest version of the FVP can be downloaded from Arm here: https://developer.arm.com/tools-and-software/open-source-software/arm-platforms-software/arm-ecosystem-fvps 
+
 ### Bare Metal Getting Started
 This section is a gentle introduction to get you setup for bare metal coding on Morello.
-1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) 
-2. [Using Yocto bitbake to generate bare metal firmware.](./morello/BareMetalOnMorello/YoctoBitbake/YoctoBitbake.md)
+1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) `fvp version 0.11_9`
+2. [Using Yocto bitbake to generate bare metal firmware.](./morello/BareMetalOnMorello/YoctoBitbake/YoctoBitbake.md) `fvp version 0.11_9`
 3. Building bare metal firmware from cloning the SCP Firmware and Trusted Firmware-A Morello git projects.
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
@@ -74,7 +75,7 @@ Note that these examples have been tested with Development Studio version `armds
 ### Boot Flow Examples (Stand-a-lone programs, e.g targeted for EL2N only)
 This section guides you through some boot flow examples on Morello. Code can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository under `commandLine/bootflow` unless specified otherwise. Some examples require **Development Studio**, and allow you to step through code and check memory contents. 
 
-Note that these examples have been tested with Development Studio version `armds-morello-edition-2020-1m0.tgz`, FVP version `FVP_Morello_0.11_9` and LLVM version `bare-metal-release-1.0`. Also none of these examples have yet been tested with CHERI.
+Note that these examples have been tested with Development Studio version `armds-morello-edition-2020-1m0.tgz`, FVP version `FVP_Morello_0.11_9` and LLVM version `bare-metal-release-1.0`. Also none of these examples have yet been tested with *Morello-purecap*.
 
 [The trusted boot flow](./morello/BootFlowOnMorello/BootFlowOverview/BootFlowOverview.md)
 

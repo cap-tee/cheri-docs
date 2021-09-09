@@ -27,7 +27,7 @@ clone git@github.com:cap-tee/morello-baremetal-examples.git
 1. In a `File` window go to the scripts directory and open the `runfvp.sh` file in an editor. 
 2. Check the following:
 * The FVP model is pointing to the directory in which it was downloaded.
-* The binary files scp_romfw.bin, mcp_romfw.bin, scp_fw.bin and the bts.bin are pointing to the `morello-baremetal-examples/bare-metal-example-scpmcp-binaries/SCPMCPBuiltWithAPreset0x14000000/` directory.
+* For fvp `version 0.11_9`, the binary files scp_romfw.bin, mcp_romfw.bin, scp_fw.bin and the bts.bin are pointing to the `morello-baremetal-examples/bare-metal-example-scpmcp-binaries/SCPMCPBuiltWithAPreset0x14000000/` directory.
 
 ## Run the Model
 Run the FVP model from the `morello-baremetal-examples/scripts` directory.
