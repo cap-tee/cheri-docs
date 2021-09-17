@@ -6,6 +6,8 @@
 
 It is assumed that you have already installed the Morello FVP (Morello hardware Emulator). See https://github.com/cap-tee/cheri-docs/blob/main/morello/MorelloPlatform/InstallingMorelloFVP.md 
 
+It is assumed that you have already installed the prebuilt Morello supported LLVM binaries for bare metal. See https://github.com/cap-tee/cheri-docs/blob/main/morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md
+
 It is assumed that you have already installed the Development Studio (GUI and command line debugger). You will need this to run and debug the example code. See https://github.com/cap-tee/cheri-docs/blob/main/morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md
 
 ## Clone examples
