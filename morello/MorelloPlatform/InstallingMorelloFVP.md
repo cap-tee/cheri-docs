@@ -128,3 +128,16 @@ The following issues were noted when installing FVP_Morello_0.11_9.
 
 2. Incorrect version is displayed.
     * *Description:* When asking for the installed version of FVP_Morello_0.11_9 using `FVP_Morello --version`, the incorrect version (0.11.8) is returned. 
+
+The following general issues were observed when running the FVP on some installations of Ubuntu.
+
+1. libatomic1 package missing
+	* *Description:* The following error appears when running the FVP: 
+	```
+	Error running FVP_Morello – Error: (E549) uncaught exception: libatomic.so.1: cannot open shared object file: No such file or directory
+	```
+	* *Solution:* Check if libatomic1 package is installed, if it isn't then you need to install it.
+	```
+	dpkg -l | grep libatomic1
+	sudo apt install libatomic1
+	```
