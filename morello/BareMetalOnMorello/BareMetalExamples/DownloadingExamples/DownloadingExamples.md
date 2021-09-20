@@ -31,6 +31,12 @@ git@github.com:cap-tee/morello-baremetal-examples.git
 2. Go to **File -> Import -> General -> Existing Projects into Workspace**. Select **Next** and then under **Select root directory**, go to `morello-baremetal-examples/DevelopmentStudio`. Import all the projects.
 3. Select **HelloWorld -> includes** in the Project Explorer window and check they are pointing to the correct location. If you have cloned the llvm-morello-releases to a different directory you will need to change where they are pointing to. Go to **Window -> preferences -> ArmDS -> toolchains** and add the LLVM tool chain binaries by pointing to the correct bin directory. Apply the changes and let the tool restart.
 
+## Linker Scripts and Development Studio
+
+Most of the examples use a linker script to place code into defined sections of memory. The build tools do not automatically know the location of the project linker script and the path must be set under the project properties. Whilst this is already set for each project, it may need to be edited depending upon where the examples have been cloned to. 
+
+To check the linker path, select the **project**, and **right click**, then **Properties -> C/C++ Build -> settings -> LLVM C Linker 11.0.0 -> Miscellaneous**.
+
 ## Check the FVP model run script
 
 1. In a `File` window go to the scripts directory and open the `runfvp.sh` file in an editor. 
