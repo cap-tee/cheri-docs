@@ -10,7 +10,10 @@ The MMU is the memory management unit and controls the translation between virtu
 
 ## Translation Table Format
 
-The translation table is based upon the default Morello setup. Although access to the default source code is not possible, the assembly instructions can be viewed by dissassembly in the Development Studio. The translation table has been modified to include peripheral memory regions. The translation table is shown.
+The translation table is based upon the default Morello setup. The Morello initialisation source code can be found in the **newlib** repository of Morello in a file called `crt0.S`. 
+https://git.morello-project.org/morello/newlib/-/blob/morello/release-1.0/libgloss/aarch64/crt0.S, and the MMU setup is located in a file called `rdimon-aem-el3.S`.  https://git.morello-project.org/morello/newlib/-/blob/morello/release-1.0/libgloss/aarch64/cpu-init/rdimon-aem-el3.S
+
+Additionally, the assembly instructions can be viewed by dissassembly in the Development Studio. The translation table has been modified to include peripheral memory regions. The translation table is shown.
 
 ![Morello MMU at EL3](./MMUEL3New.gif)
 
