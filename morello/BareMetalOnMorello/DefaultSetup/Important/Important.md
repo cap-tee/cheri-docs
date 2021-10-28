@@ -79,3 +79,12 @@ In *Morello-purecap* mode, when performing an ERET you need to manually set the 
 
   ERET
 ```
+
+## Using malloc() and other heap usage in Morello-purecap with Development Studio
+
+When using the heap in *Morello-purecap* mode with the debugger, make sure the **FVP runscript semi-hosting heap** covers the heap space needed by the program. If this is not set up correctly the `_sbrk()` function used by `malloc()` will return -1, resulting in a **non valid capability**. The heap base needs to be set to an address smaller than the program code end address, as that is where the heap starts. 
+
+```
+-C css.cluster0.cpu0.semihosting-heap_base=0x80000000
+```
+In normal *Morello* mode there are differences in how the heap is calculated and therefore differences between the semihosting and actual heap may not present an issue.
