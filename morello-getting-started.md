@@ -67,7 +67,7 @@ Note that these examples have been tested with the following combinations:
 3. [ChericExample](./morello/BareMetalOnMorello/BareMetalExamples/ChericExample/ChericExample.md) - Exploring the cheri.h API functions and the cheriintrin.h built-in functions. Setting up capability pointers, and retreiving and printing their properties. `purecap`
 4. [MMUEL3](./morello/BareMetalOnMorello/BareMetalExamples/MMUEL3/MMUEL3.md) - Changes the MMU set up at EL3 for Morello. `purecap`
 5. [EL3ToEL1](./morello/BareMetalOnMorello/BareMetalExamples/EL3ToEL1/EL3ToEL1.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure. `purecap`
-6. [EL3MMUToEL1MMU](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level.
+6. [EL3MMUToEL1MMU](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMU/EL3MMUToEL1MMU.md) - Changes the exception level from EL3 to either EL1 secure or EL1 non-secure, and sets up the MMU at each level. `purecap`
 7. [EL3MMUUART](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUUart/EL3MMUUart.md) - Changes the MMU set up at EL3 for Morello, sets up the UART and writes a message.
 8. [EL3MMUToEL1MMUUART](./morello/BareMetalOnMorello/BareMetalExamples/EL3MMUToEL1MMUUART/EL3MMUToEL1MMUUART.md) - Changes Exception level to either EL1S or EL1N and sets up the MMUs and uart, and writes a message. It also sets up secure & non-secure memory regions.
 9. [EL3MMUTimerInterrupt
