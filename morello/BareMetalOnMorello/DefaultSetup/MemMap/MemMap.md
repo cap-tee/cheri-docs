@@ -45,5 +45,9 @@ Table 4.2 (section 4.2) in the manual specifies the address offset of each regis
 ## Access to the PL011 UART
 The Morello Platform has access to the standard ARMv8-A PL011 UART. Although not specified in the Morello Documentation, this can be accessed through the base address at 0x1C090000. This is located at the top of the **Expansion AXI** region (0x08000000 - 0x1FFFFFFF). The Technical Reference Manual for the uart can be found here: https://developer.arm.com/documentation/ddi0183/latest/
 
+The BOOT uart base addresses are defined in the platform_def.h for Morello located here:
+
+https://git.morello-project.org/morello/trusted-firmware-a/-/blob/morello/master/plat/arm/board/morello/include/platform_def.h 
+
 ## More....
 More Content to be added.
