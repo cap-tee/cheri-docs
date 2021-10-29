@@ -15,10 +15,13 @@ This example code sets up the MMU and the UART in EL3. The UART is accessed usin
 The files consist of the following
 
 * EL3MMUuart.c - main c code main() at EL3
-* el3mmusetup.s - MMU setup for EL3
+* el3mmusetup.S - MMU setup for EL3
 * uartS.c - uart functions
 * uartS.h - uart header file
 * linker-script.ld - linker script
+* capboot.S - creates global capability to cover the UART memory space when in *Morello-purecap* mode. Note this should form part of the boot code.
+* capfuncs.c - supporting functions to print capability properties for debugging when in *Morello-purecap* mode.
+* capfuncs.h - supporting functions header file
 
 ## Linker script and Specifying Memory Regions
 
