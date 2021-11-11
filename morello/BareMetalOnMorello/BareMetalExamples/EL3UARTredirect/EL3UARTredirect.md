@@ -13,11 +13,16 @@ This example code uses an embedded printf function from https://github.com/mpala
 The files consist of the following
 
 * EL3UARTredirect.c - main c code main() at EL3
-* el3mmusetup.s - MMU setup for EL3
+* el3mmusetup.S - MMU setup for EL3
 * uart_redirect.c - uart functions
 * uart_redirect.h - uart header file
 * printf.c - printf functions
 * printf.h - printf functions header file
+
+Capability files
+* capboot.S - code to set up UART capability that would go in bootcode
+* capfuncs.c - function to print capability properties
+* capfuncs.h - function to print capability properties header file
 
 ## MMU set up
 
