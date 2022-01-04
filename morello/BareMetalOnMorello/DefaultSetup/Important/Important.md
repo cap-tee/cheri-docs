@@ -59,6 +59,26 @@ my general code for morello and morello-purecap
 ...
 ```
 
+## Setting c64 mode for a capability exception
+
+In *Morello-purecap* mode, you need to manually set the c64 state for an exception entry at each EL, otherwise it will be set to a64 by default. Symptoms of the problem include tag bits being cleared such as on the stack pointer after an exception, and the PSTATE.c64 bit set to 0.
+
+* For an exception entry to EL1: CCTLR_EL1.C64E bit[5]
+* For an exception entry to EL2: CCTLR_EL2.C64E bit[5]
+* For an exception entry to EL3: CCTLR_EL3.C64E bit[5]
+
+**Example code for EL2**
+
+```
+  #ifdef __CHERI_PURE_CAPABILITY__
+    MRS  x1,  CCTLR_EL2 //read
+    // Need to manually set c64 mode for an exception entry, otherwise will be set to a64
+    ORR x1,x1, #(1 << 5)
+    MSR  CCTLR_EL2, x1 //write
+    ISB
+  #endif
+```
+
 ## Setting c64 mode on an ERET
 
 In *Morello-purecap* mode, when performing an ERET you need to manually set the c64 state, otherwise it will be set to a64 by default. Symptoms of the problem include tag bits being cleared on function calls after an ERET, and causing an exception.
