@@ -46,7 +46,7 @@ This section explains more about the set up of bare metal on Morello. It is wort
 1. [Understanding the default initialisation sequence for Morello.](./morello/BareMetalOnMorello/DefaultSetup/InitSequence/InitSequence.md)
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
-4. [Important information for writing programs for Morello - things that might catch you out](./morello/BareMetalOnMorello/DefaultSetup/Important/Important.md)
+4. [Important information for writing programs for Morello - things that might catch you out](./morello/BareMetalOnMorello/DefaultSetup/Important/Important.md).  `Updated March 2022`
 
 ### Bare Metal Examples (Starting at EL3)
 This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository. The examples are used with Development Studio. 

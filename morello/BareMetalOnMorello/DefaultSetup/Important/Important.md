@@ -100,6 +100,9 @@ In *Morello-purecap* mode, when performing an ERET you need to manually set the 
   ERET
 ```
 
+## Setting c64 mode after some assembly branch instructions 
+In *Morello-purecap* mode, some branch instructions default back to a64 mode on the branch. To maintain capability mode the least significant bit of the target capability needs to be set to 1. Symptoms of the problem include an exception occuring on a capability load or store instruction after the branch. Check `PSTATE.c64` after the branch as this will indicate if the state has changed. You can also use the instruction `BX#4` to change the state after the branch, but note this only flips the state from the current state, and you will need to do the same after the return.
+
 ## Using malloc() and other heap usage in Morello-purecap with Development Studio
 
 When using the heap in *Morello-purecap* mode with the debugger, make sure the **FVP runscript semi-hosting heap** covers the heap space needed by the program. If this is not set up correctly the `_sbrk()` function used by `malloc()` will return -1, resulting in a **non valid capability**. The heap base needs to be set to an address smaller than the program code end address, as that is where the heap starts. 
@@ -108,3 +111,9 @@ When using the heap in *Morello-purecap* mode with the debugger, make sure the *
 -C css.cluster0.cpu0.semihosting-heap_base=0x80000000
 ```
 In normal *Morello* mode there are differences in how the heap is calculated and therefore differences between the semihosting and actual heap may not present an issue.
+
+## Debugging at different ELs with Development Studio
+
+You can debug and step through C(++) code at different ELs with Development Studio by adding some extra debugger commands. Without these commands, the symbols and variables are lost after an ERET from EL3 and the debugger reverts to stepping through assembly only. To debug C(++) code at EL1N for example *double-click* on the debug `.launch` file and select the **Debugger** tab. *Tick* the **Execute debugger commands** box and include the additional commands as per example shown below to debug at EL1N. Include the name of the function you wish to start debugging from. In this example it is `el1nmain`.
+
+![debugger configurations](./debugEL1.jpg)
