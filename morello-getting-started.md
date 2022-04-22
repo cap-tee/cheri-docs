@@ -35,6 +35,9 @@ In order to run bare metal code (code starting at EL3 without the trusted firmwa
 This section is a gentle introduction to get you setup for bare metal coding on Morello.
 1. [Bare metal build options.](./morello/BareMetalOnMorello/BuildOptions/BuildOptions.md) `fvp version 0.11_9`
 2. [Using Yocto bitbake to generate bare metal firmware.](./morello/BareMetalOnMorello/YoctoBitbake/YoctoBitbake.md) `fvp version 0.11_9`
+
+*Note: The Android-Morello installation now uses cmake and no longer uses bitbake. Bare metal firmware used by the examples posted here can be downloaded from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository.*
+
 3. Building bare metal firmware from cloning the SCP Firmware and Trusted Firmware-A Morello git projects.
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
