@@ -10,6 +10,7 @@ The rest of the documentation builds upon the Morello Platform. Software stacks 
 
 ### Morello Platform Documents
 1. [Installing the Morello Fixed Virtual Platform.](./morello/MorelloPlatform/InstallingMorelloFVP.md)
+2. [Turning on the Morello Hardware Platform for the first time.](./morello/MorelloPlatform/SettingUpMorelloSoc.md) `New June 2022`
 
 ## Android on Morello
 ### Android on Morello Overview
@@ -45,8 +46,9 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 3. Building bare metal firmware from cloning the SCP Firmware and Trusted Firmware-A Morello git projects.
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
-6. [Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
-7. [Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
+6. [FVP: Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
+7. [FVP: Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
+8. [Morello Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
 
 ### Bare Metal Default Configuration Setup for Morello
 This section explains more about the set up of bare metal on Morello. It is worth reading if you wish to do more than just run the examples. 
