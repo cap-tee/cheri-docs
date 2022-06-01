@@ -43,7 +43,7 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 
 *Note: The Android-Morello installation now uses cmake and no longer uses bitbake. Bare metal firmware used by the examples posted here can be downloaded from the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository.*
 
-3. Building bare metal firmware from cloning the SCP Firmware and Trusted Firmware-A Morello git projects.
+3. [Using cmake to generate firmware binaries for fvp or hardware (soc).](./morello/BareMetalOnMorello/CmakeFirmwareBinaries/CmakeFirmwareBinaries.md) `New June 2022`
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
 6. [FVP: Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
