@@ -48,7 +48,10 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
 6. [FVP: Creating and running an EL3 bare metal "hello world" application on the command line (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
 7. [FVP: Creating and running an EL3 bare metal "hello world" through the Arm Development Studio (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
-8. [Morello Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
+8. [Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
+9. [FVP/Hardware: Create a TF-A baremetal payload running at EL2.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFApayload.md) `New June 2022`
+10. [FVP/Hardware: Create a TF-A "loop" payload running at EL2, and download an EL2 baremetal program via Development Studio.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFAloop.md) `New June 2022`
+
 
 ### Bare Metal Default Configuration Setup for Morello
 This section explains more about the set up of bare metal on Morello. It is worth reading if you wish to do more than just run the examples. 
