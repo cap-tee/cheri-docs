@@ -18,7 +18,7 @@
 
 * The prebuilt Morello supported LLVM binaries for bare metal have been installed
 * The Morello FVP has been installed
-* The bare metal firmware has been built
+* The bare metal firmware has been built with the AP reset at 0x14000000
 * The Morello Edition of the Arm Development Studio has been installed
 
 ## Supporting Documentation

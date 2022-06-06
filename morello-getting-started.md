@@ -46,8 +46,8 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 3. [Using cmake to generate firmware binaries for fvp or hardware (soc).](./morello/BareMetalOnMorello/CmakeFirmwareBinaries/CmakeFirmwareBinaries.md) `New June 2022`
 4. [Getting the prebuilt Morello supported LLVM binaries for bare metal.](./morello/BareMetalOnMorello/LlvmBinaries/LlvmBinaries.md)
 5. [Installing the Morello edition of the Arm Development Studio.](./morello/BareMetalOnMorello/InstallingArmDevStudio/InstallingArmDevStudio.md)
-6. [FVP: Creating and running a bare metal "hello world" application on the command line.](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
-7. [FVP: Creating and running a bare metal "hello world" through the Arm Development Studio.](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
+6. [FVP: Creating and running an EL3 bare metal "hello world" application on the command line (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
+7. [FVP: Creating and running an EL3 bare metal "hello world" through the Arm Development Studio (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
 8. [Morello Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
 
 ### Bare Metal Default Configuration Setup for Morello

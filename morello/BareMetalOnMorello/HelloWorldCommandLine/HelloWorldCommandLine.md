@@ -14,7 +14,7 @@
 
 * The prebuilt Morello supported LLVM binaries for bare metal have been installed
 * The Morello FVP has been installed
-* The bare metal firmware has been built
+* The bare metal firmware has been built with the AP reset at 0x14000000
 
 ## Locate the example C / C++ files
 Navigate to the directory where you installed the LLVM binaries `projects/baremetalsources/llvm-morello-releases`. The example C / C++ files can be found under the `examples` directory.
