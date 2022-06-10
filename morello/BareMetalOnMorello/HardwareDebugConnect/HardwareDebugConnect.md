@@ -7,7 +7,7 @@ This document describes the process to verify that the embedded debug interface 
 
 The Morello Platform has an embedded debug attached to the USB port. It implements the CMSIS-DAP interface and can be used to connect to the Development Studio debugger software. 
 
-1. Open the VM running Ubuntu and install the **2022.0M0** version (or later) of the ([Morello edition of Development Studio](./../InstallingArmDevStudio/InstallingArmDevStudio.md)). Ensure that during the post-installation process you select yes to install the debug pack SDP for Morello. This is needed to connect to the hardware.
+1. Open the VM running Ubuntu and install the **2022.0M0** version (or later) of the ([Morello edition of Development Studio](./../InstallingArmDevStudio/InstallingArmDevStudio.md)). During the post-installation process select yes to install the debug pack. This is needed to connect to the hardware.
 
 2. Connect the USB cable from the Morello machine to the host computer, and turn on the Morello machine via the switch on the back. If this is the first time the Morello hardware has been turned on follow this first: [Turning on the Morello Hardware Platform for the first time.](./../../MorelloPlatform/SettingUpMorelloSoc.md)
 
