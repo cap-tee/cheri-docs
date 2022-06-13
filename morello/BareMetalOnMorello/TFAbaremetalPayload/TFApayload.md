@@ -32,9 +32,9 @@ It is assumed the file has been called `link_scripts.ld.S` in this example.
 
 ## Build baremetal 
 
-You may wish to create bash scripts to Build the code: 'helloworld/scripts`
-* /createprogbinNoCap.sh`
-* /createprogbinWithCap.sh`
+You may wish to create bash scripts to Build the code: `helloworld/scripts`
+* /`createprogbinNoCap.sh`
+* /`createprogbinWithCap.sh`
 
 The script commands below are non-specific to Morello, but will run on Morello and build for non capability mode. 
 
@@ -44,7 +44,7 @@ The script commands below are non-specific to Morello, but will run on Morello a
 <toolchain path>/bin/llvm-objcopy -O binary ../progbinaries/noCapabilities/helloworld
 ```
 
-The script commands below are to build with capabilities. Note that the example given at the link: https://git.morello-project.org/morello/docs/-/blob/morello/release-1.3/standalone-baremetal-readme.rst , section **1. Create standalone application code** will not work with capabilities because a specific address value is defined for the UART base address. With capabilities, the UART pointer needs to be derived from a valid capability.
+The script commands below are to build with **capabilities**. Note that the example given at the link: https://git.morello-project.org/morello/docs/-/blob/morello/release-1.3/standalone-baremetal-readme.rst , section **1. Create standalone application code** will not work with capabilities because a specific address value is defined for the UART base address. With capabilities, the UART pointer needs to be derived from a valid capability.
 
 ```bash
 <toolchain path>/bin/clang -target aarch64-none-elf  -march=morello+c64 -mabi=purecap -c ../src/helloworld.c -o ../progbinaries/withCapabilities/helloworld.o -O3
@@ -61,9 +61,9 @@ This will generate a binary called helloworld to run as a non-secure payload on 
 
 ## Package baremetal binary for fvp using fip tool
 
-You may wish to create bash scripts to package the program: 'helloworld/scripts`
-* /createfvpbinNoCap.sh`
-* /createfvpbinWithCap.sh`
+You may wish to create bash scripts to package the program: `helloworld/scripts`
+* /`createfvpbinNoCap.sh`
+* /`createfvpbinWithCap.sh`
 
 The following commands /script needs to be run from the <morello_workspace> directory. Copy the commands into the script or run from the console.
 
@@ -84,14 +84,27 @@ all fip
 
 The commands above will generate `fip.bin` and `bl1.bin` under the `<morello_workspace>/bsp/arm-tf/build/morello/release/` directory. You may wish to copy these files to a `helloworld/fvpbinaries/NoCap/` directory.
 
+## A note on the Package options
+
+Note that `TARGET_PLATFORM` takes 'fvp' for FVP and 'soc' for Development Board. 
+
+Note that `ENABLE_MORELLO_CAP` can take either 0 or 1. When `ENABLE_MORELLO_CAP = 1`, the Morello instructions are not trapped, allowing Morello specific code to run. It does not put the PSTATE into c64 mode, initialisation instructions written in the baremetal code, must do this.
+
+The option `ENABLE_MORELLO_CAP = 1` will support the following build configurations for the baremetal code:
+
+   * -target aarch64-none-elf
+   * -target aarch64-none-elf -march=morello
+   * -target aarch64-none-elf -march=morello+c64 -mabi=purecap
+
+The option `ENABLE_MORELLO_CAP = 0` will only support the following build configuration for the baremetal code:
+
+   * -target aarch64-none-elf
 
 ## Package baremetal binary for hardware (soc) using fip tool
 
-Note that `TARGET_PLATFORM` takes 'fvp' for FVP and 'soc' for Development Board. `ENABLE_MORELLO_CAP` can take either 0 or 1.
-
-You may wish to create bash scripts to package the program for soc: 'helloworld/scripts`
-* /createsocbinNoCap.sh`
-* /createsocbinWithCap.sh`
+You may wish to create bash scripts to package the program for soc: `helloworld/scripts`
+* /`createsocbinNoCap.sh`
+* /`createsocbinWithCap.sh`
 
 The following commands /script needs to be run from the <morello_workspace> directory. Copy the commands into the script or run from the console.
 
@@ -113,10 +126,10 @@ The commands above will generate `fip.bin` and `bl1.bin` under the same `<morell
 
 ## Run the EL2 baremetal program directly with the FVP
 
-You may wish to create bash scripts to run the fvp for the different configurations: 'helloworld/scripts`
+You may wish to create bash scripts to run the fvp for the different configurations: `helloworld/scripts`
 
-/runfvpNoCap.sh`
-/runfvpWithCap.sh`
+* /`runfvpNoCap.sh`
+* /`runfvpWithCap.sh`
 
 ```
 <modelpath>/FVP_Morello/models/Linux64_GCC-6.4/FVP_Morello \
