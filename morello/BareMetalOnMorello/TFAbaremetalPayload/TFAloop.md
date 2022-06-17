@@ -63,7 +63,7 @@ SECTIONS
   . = 0xE0000000;
 
   ro . : {
-    */helloworld.o(.text)
+    */loop.o(.text)
     *(.text*)
     *(.rodata*)
   } >RAM
@@ -146,7 +146,7 @@ cp -a <morello_workspace>/bsp/arm-tf/build/morello/release/fip.bin <EL2loop>/soc
 
 ## Create EL2 baremetal program in Development Studio
 
-Open Development Studio and create a new project. 
+Open Development Studio and create a new project. Here, the example project is called **EL2HelloWorld**.
 
 **C File**
 
@@ -154,7 +154,7 @@ Create a C file with the source code. You may wish to follow the example code to
 
 **Boot file**
 
-Create a basic boot file to set up the stack and registers for your EL2 program. This could be called `setupel2.S`
+Create a basic boot file to set up the stack and registers for your EL2 program. This could be called `setupel2.S`. For a more complex set up requirement, the default initialisation script can be modified for EL2.see [How to modify the default initialisation files for your project at EL3](./../Modifycrt0/Modifycrt0.md). 
 
 ```
 .align 16
@@ -181,6 +181,8 @@ B main
 
 Create a linker script. The format of the linker script in Development Studio is slightly different to the 'loop' linker script on the command line. Include the stack.
 
+Also ensure the boot text is the first thing that runs on entry to EL2 by including it first.
+
 ```
 OUTPUT_FORMAT("elf64-littleaarch64")
 OUTPUT_ARCH("aarch64")
@@ -197,7 +199,8 @@ SECTIONS
   . = 0xE0000000;
 
   ro . : {
-    */helloworld.o(.text)
+    */src/setupel2.o(.text)
+    */src/EL2HelloWorld.o(.text)
     *(.text*)
     *(.rodata*)
   } >RAM
@@ -228,7 +231,11 @@ end = .;
 
 Include the linker script in the build. Go to **File -> Properties -> C/C++Build -> Settings LLVM C Linker 11.0.0-> Miscellaneous -> +** (add -Xlinker option) `-T/<projectpath>/link_scripts.ld.S -v`
 
-Set the entry function to the boot file. Go to **File -> Properties -> C/C++Build -> Settings LLVM C Linker 11.0.0-> Miscellaneous -> +** (add -Xlinker option) `--entry=_startel2`
+Set the entry function to the boot file. Go to **File -> Properties -> C/C++Build -> Settings LLVM C Linker 11.0.0-> Miscellaneous -> +** (add -Xlinker option) `--entry=_startel2`.
+
+Prevent the default EL3 initialisation script from being included in the build. Go to **File -> Properties -> C/C++Build -> Settings LLVM C Linker 11.0.0-> Miscellaneous -> 'Other Flags'** Add `-nostartfiles`.
+
+Leave the default target as: `aarch64-none-elf`. Go to **File -> Properties -> C/C++Build -> Settings ->LLVM C Compiler/LLVM Assembler / LLVM C Linker -> Target**.
 
 **Build the project**
 
@@ -263,7 +270,7 @@ You may wish to create a bash script to run the fvp: 'EL2loop/scripts/runfvpNoCa
 
 In Development Studio create a new connection to the FVP **File -> New -> Model Connection** and associate with the EL2 baremetal program. Once set up select **Debug**.
 
-Run the program. You should see the message `hello` appear in the AP console.
+Run the program. You should see the message `hello` appear in the AP console if you have followed the example code.
 
 ## Download EL2 baremetal program from Development Studio to Hardware
 
