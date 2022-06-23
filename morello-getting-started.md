@@ -51,6 +51,7 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 8. [Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
 9. [FVP/Hardware: Create a TF-A baremetal payload running at EL2.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFApayload.md) `New June 2022`
 10. [FVP/Hardware: Create a TF-A "loop" payload running at EL2, and download an EL2 baremetal program via Development Studio.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFAloop.md) `New June 2022`
+11. [FVP/Hardware: Create a purecap TF-A baremetal payload running at EL2, with modified initialisation files.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFAPurecap.md) 'New June 2022`
 
 
 ### Bare Metal Default Configuration Setup for Morello
@@ -59,7 +60,8 @@ This section explains more about the set up of bare metal on Morello. It is wort
 2. [Understanding the Morello memory map.](./morello/BareMetalOnMorello/DefaultSetup/MemMap/MemMap.md)
 3. [Understanding the default MMU set up at EL3](./morello/BareMetalOnMorello/DefaultSetup/MMU/MMU.md)
 4. [Important information for writing programs for Morello - things that might catch you out](./morello/BareMetalOnMorello/DefaultSetup/Important/Important.md).  `Updated March 2022`
-5. [How to modify the default initialisation files for your project at EL3](./morello/BareMetalOnMorello/Modifycrt0/Modifycrt0.md)
+5. [How to modify the default initialisation files for your project at EL3](./morello/BareMetalOnMorello/Modifycrt0/Modifycrt0.md) 'New June 2022`
+6. [How to modify the default initialisation files for an EL2 project](./morello/BareMetalOnMorello/Modifycrt0/Modifycrt0ForEL2.md) 'New June 2022`
 
 ### Bare Metal Examples (Starting at EL3)
 This section guides you through the bare metal example code which can be found in the [morello-baremetal-examples](https://github.com/cap-tee/morello-baremetal-examples) repository. The examples are used with Development Studio. 
