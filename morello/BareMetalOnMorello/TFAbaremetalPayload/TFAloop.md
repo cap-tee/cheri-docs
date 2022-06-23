@@ -189,7 +189,7 @@ OUTPUT_ARCH("aarch64")
 ENTRY(main)
 
 MEMORY {
-  RAM (rwx): ORIGIN = 0xE0000000, LENGTH = 0xE0000000 + 0x200000
+  RAM (rwx): ORIGIN = 0xE0000000, LENGTH = 0x200000
 }
 
 STACK_SIZE = 0x20000;
@@ -216,12 +216,11 @@ __bss_start__ = ALIGN(8);
 }>RAM
 __bss_end__ = ALIGN(8);
 
-. = ALIGN(16);
 .stack_el2n (NOLOAD):
 {
    _stack_el2n_start = .;
    . = . + STACK_SIZE;
-   __stack_el2n_end = .;
+   _stack_el2n_limit = .;
 }>RAM
 end = .;
 }
