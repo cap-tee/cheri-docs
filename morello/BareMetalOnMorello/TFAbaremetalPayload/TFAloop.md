@@ -55,7 +55,7 @@ OUTPUT_ARCH("aarch64")
 ENTRY(main)
 
 MEMORY {
-  RAM (rwx): ORIGIN = 0xE0000000, LENGTH = 0xE0000000 + 0x200000
+  RAM (rwx): ORIGIN = 0xE0000000, LENGTH = 0x200000
 }
 
 SECTIONS
@@ -186,7 +186,7 @@ Also ensure the boot text is the first thing that runs on entry to EL2 by includ
 ```
 OUTPUT_FORMAT("elf64-littleaarch64")
 OUTPUT_ARCH("aarch64")
-ENTRY(main)
+ENTRY(_startel2)
 
 MEMORY {
   RAM (rwx): ORIGIN = 0xE0000000, LENGTH = 0x200000
