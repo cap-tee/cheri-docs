@@ -43,9 +43,9 @@ Create a new standard "Hello World" project in Development Studio and copy in th
 
 **Step 2: Build the project in Development Studio**
 
-Exclude the default initialisation from the build using `-nostartfiles` in the Linker **Other Flags** box.
+Exclude the default initialisation (initialisation for EL3) from the build using `-nostartfiles` in the Linker **Other Flags** box.
 
-Set the build options for [purecap](./../BareMetalExamples/Compiling/Compiling.md).
+Set the build options for [purecap](./../BareMetalExamples/Compiling/Compiling.md), or leave as default for standard armv8.
 
 Then build your project as normal from Development Studio.
 
@@ -53,9 +53,17 @@ Then build your project as normal from Development Studio.
 
 Run the FVP with the TF-A loop payload that has been built with the `ENABLE_MORELLO_CAP=1` option. This is needed in order to support morello/purecap programs. (See [FVP/Hardware: Create a TF-A "loop" payload running at EL2, and download an EL2 baremetal program via Development Studio](./TFAloop.md))
 
-**Step 4: Download Development Studio Program**
+**Step 4: Download Development Studio Program to FVP**
 
-Create a model connection and download your program.
+Create a model connection and download your program to the FVP.
+
+**Step 3 alternative: Run the hardware with a TF-A loop payload**
+
+Run the hardware with the TF-A loop payload that has been built with `ENABLE_MORELLO_CAP=1` and `TARGET_PLATFORM=soc` options. See [FVP/Hardware: Create a TF-A "loop" payload running at EL2, and download an EL2 baremetal program via Development Studio](./TFAloop.md)
+
+**Step 4 alternative: Download Development Studio Program to hardware**
+
+Create a [hardware connection](./../HardwareDebugConnect/HardwareDebugConnect.md), [enable semihosting on the hardware](./../HardwareSemihosting/HardwareSemihosting.md) (needs to be explicitly set on the hardware), and then download your program.
 
 ## Package your program into a loader to run from a TF-A payload
 
