@@ -49,7 +49,7 @@ This section is a gentle introduction to get you setup for bare metal coding on 
 6. [FVP: Creating and running an EL3 bare metal "hello world" application on the command line (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldCommandLine/HelloWorldCommandLine.md)
 7. [FVP: Creating and running an EL3 bare metal "hello world" through the Arm Development Studio (AP reset at 0x14000000).](./morello/BareMetalOnMorello/HelloWorldArmDevStudio/HelloWorldArmDevStudio.md)
 8. [Hardware: Verifying the embedded debug can connect to Development Studio.](./morello/BareMetalOnMorello/HardwareDebugConnect/HardwareDebugConnect.md) `New June 2022`
-9. [Hardware: Semihosting on the hardware.](./morello/BareMetalOnMorello/HardwareSemihosting/) `New July 2022`
+9. [Hardware: Semihosting on the hardware.](./morello/BareMetalOnMorello/HardwareSemihosting/HardwareSemihosting.md) `New July 2022`
 10. [FVP/Hardware: Create a TF-A baremetal payload running at EL2.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFApayload.md) `New June 2022`
 11. [FVP/Hardware: Create a TF-A "loop" payload running at EL2, and download an EL2 baremetal program via Development Studio.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFAloop.md) `New June 2022`
 12. [FVP/Hardware: Create a purecap TF-A baremetal payload running at EL2, with modified initialisation files.](./morello/BareMetalOnMorello/TFAbaremetalPayload/TFAPurecap.md) `New June 2022`
