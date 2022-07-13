@@ -11,7 +11,7 @@ The Morello Platform has an embedded debug attached to the USB port. It implemen
 
 2. Connect the USB cable from the Morello machine to the host computer, and turn on the Morello machine via the switch on the back. If this is the first time the Morello hardware has been turned on follow this first: [Turning on the Morello Hardware Platform for the first time.](./../../MorelloPlatform/SettingUpMorelloSoc.md)
 
-3. Open a **PuTTY** window for each COM port. The COM ports appear in the following order: **Motherboard Configuration Controller(MCC), Platform Controller Chip(PCC), Application Processor(AP), System Control Processor(SCP)**
+3. Open a **PuTTY** window for each COM port. The COM ports appear in the following order: **Motherboard Configuration Controller(MCC), Platform Controller Chip(PCC), Application Processor(AP), System Control Processor(SCP)**. Use the PuTTY settings described in [Turning on the Morello Hardware Platform for the first time.](./../../MorelloPlatform/SettingUpMorelloSoc.md)
 
 4. Patch the USB cable to the VM by selecting **Devices -> USB -> Arm Ltd Arm Morello USB Debug[0100]** from the VM file menu. 
 
