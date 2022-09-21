@@ -7,7 +7,7 @@ This document describes the process to modify the initialisation files that run 
 
 ## Obtain a copy of the initialisation files
 
-First, download the initialisation files. Ensure the versions you download match the version of the LLVM baremetal release you are using in Development Studio. For example if you installed `LLVM morello/release-1.3` from the `llvm-project-releases` repository, ensure you download the source files `morello/release-1.3` from the `Newlib` source repository
+First, download the initialisation files. Ensure the versions you download match the version of the LLVM baremetal release you are using in Development Studio. For example if you installed `LLVM morello/release-1.3` from the `llvm-project-releases` repository, ensure you download the source files `morello/release-1.3` from the `Newlib` source repository. https://git.morello-project.org/morello/newlib/-/tree/morello/release-1.3
 
 * newlib/libgloss/aarch64/crt0.S *(main _start function)*
 * newlib/libgloss/aarch64/svc.h

@@ -135,3 +135,13 @@ These commands need to be run before the program is downloaded and run. To do th
 ![debugger script](./ds_script_debug.jpg)
 
 This will set up and enable the semihosting on the hardware.
+
+## Running purecap on the hardware with initialisation crt0.S file release-1.3 and below
+
+Note: this issue has been fixed in release 1.4.
+
+This is based on release 1.3 of the Morello initialisation files from Newlib. https://git.morello-project.org/morello/newlib/-/tree/morello/release-1.3. See also https://github.com/cap-tee/cheri-docs/blob/main/morello/BareMetalOnMorello/Modifycrt0/Modifycrt0.md and https://github.com/cap-tee/cheri-docs/blob/main/morello/BareMetalOnMorello/Modifycrt0/Modifycrt0ForEL2.md for more information.
+
+If you are using the default initialisation files crt0.S to set up and run baremetal code on the hardware, you need to add some additional cache flushing instructions (`isb`) to ensure configuration registers are updated and instructions are complete before switching to capability mode. Without these minor modifications you may experience problems running bare metal capability code. Specifically, it has been observed that capability code can be `stepped` through using DS when debugging, but when the code is `run` using DS the cpu hangs in a WFI loop. 
+
+See this link for more information on where to place the isb instructions in crt0.S: https://github.com/cap-tee/cheri-docs/blob/main/morello/BareMetalOnMorello/Modifycrt0/Modifycrt0ForEL2.md 

@@ -3,7 +3,7 @@
 # How to modify the default initialisation files for an EL2 project
  [Go back to Morello Getting Started Guide.](./../../../morello-getting-started.md)
 
-This document describes the process to modify the initialisation files that run before the `main` function to be used by an **EL2 bare metal program**. The initiialisation files set up the system for programs starting at EL3, but could also provide a suitable baseline for setting up an EL2 program, such as a TF-A payload (BL33) with some small modifications.  See [Understanding the Default Initialisation Sequence for Morello](./../DefaultSetup/InitSequence/InitSequence.md) for more information regarding what happens before `main`.
+This document describes the process to modify the initialisation files that run before the `main` function to be used by an **EL2 bare metal program**. The initiialisation files set up the system for programs starting at EL3, but could also provide a suitable baseline for setting up an EL2 program, to be run from DS or as a TF-A payload (BL33) with some small modifications.  See [Understanding the Default Initialisation Sequence for Morello](./../DefaultSetup/InitSequence/InitSequence.md) for more information regarding what happens before `main`.
 
 For running **pure cap** programs at EL2, this kind of initialisation set up is required.
 
@@ -15,11 +15,11 @@ First, download the initialisation files (see [How to modify the default initial
 
 Build your project as normal. You may wish to verify that the project still works on the FVP at EL3 as normal before going further.
 
-## Modify the initialisation crt0.S file for EL2
+## Modify the initialisation crt0.S file for EL2 with fvp
 
-The example used here is based on release-1.3. A different release may have different line numbers and code. Documented is the minimal changes needed to enable a "hello world" program to run in purecap mode at EL2.
+The example used here is based on release-1.3. A different release may have different line numbers and code. Documented is the minimal changes needed to enable a "hello world" program to run in purecap mode at EL2 from DS with semihosting, assuming a `loop code` binary is already running at EL2.
 
-* **line 118 - CPTR_EL3** - Comment out 3 lines. When building the BL33 binary into the `fip.bin`, use `ENABLE_MORELLO_CAP=1` to ensure the EC bit is set in EL3 (EC=1) (by the Trusted Firmware) so that the Morello instructions are not trapped at any exception level. See section **"A note on the Package options"** from [FVP/Hardware: Create a TF-A baremetal payload running at EL3](./../TFAbaremetalPayload/TFApayload.md)
+* **line 118 - CPTR_EL3** - Comment out 3 lines. When building the BL33 `loop code` binary into the `fip.bin`, use `ENABLE_MORELLO_CAP=1` to ensure the EC bit is set in EL3 (EC=1) (by the Trusted Firmware) so that the Morello instructions are not trapped at any exception level. See section **"A note on the Package options"** from [FVP/Hardware: Create a TF-A baremetal payload running at EL3](./../TFAbaremetalPayload/TFApayload.md)
     ```
     //mrs    x0, CPTR_EL3
     //orr    x0, x0, #(1 << 9) /* set EC */
@@ -63,6 +63,48 @@ From:
     //bic    x0, x0, #(1 << 10) /* clear TFP */
     //msr    CPTR_EL3, x0
     ```
+
+## Additional modifications required to the initialisation crt0.S file to make purecap work on the hardware
+
+Note: this issue has been fixed in release 1.4.
+
+You need to add some additional cache flushing instructions to ensure configuration registers are updated and instructions are complete before switching to capability mode. Without these minor modifications you may experience problems running bare metal capability code on the hardware. Specifically it has been observed that capability code can be stepped through using DS, but when run the cpu hangs in a WFI loop. Add the `isb` cache flushing instructions as follows:
+
+* **From line 132 - SCTLR_EL3** - Comment out SCTLR_EL3
+
+```
+  //MODIFIED***comment out for EL2
+    //mrs    x0, SCTLR_EL3
+    //bic    x0, x0, #(1 << 20) /* clear CD0 */
+    //bic    x0, x0, #(1 << 22) /* clear CD */
+    //msr    SCTLR_EL3, x0
+
+  //ADDED ISB HERE needed to avoid WFI B cpu hang
+    isb
+
+  //MODIFIED***modify for EL2
+    /* Use c28 as the adrdp base, no DDC/PCC offsetting and seal CLR */
+    mov    x0, #(1 << 4) | (1 << 7)
+    msr    CCTLR_EL2, x0
+
+  //ADDED ISB HERE needed to avoid WFI B cpu hang
+    isb
+
+#endif
+  
+  //MODIFIED***comment out for EL2
+    //mrs    x0, CPTR_EL3
+    //bic    x0, x0, #(1 << 10) /* clear TFP */
+    //msr    CPTR_EL3, x0
+
+#ifdef __ARM_FEATURE_C64
+    /* Switch to C64 mode. */
+    READSYS     c1, DDC    /* Default data capability */
+
+```
+## Turning off semihosting in the initialisation crt0.S file to enable baremetal code to run as a fip binary
+
+If you are using the crt0.S file for boot up of your baremetal code and want to compile it as a fip to run directly on the hardware without the debugger, then you need to turn off the semi-hosting in the crt0.S initialisation file. You may also want to do this to turn off semihosting from DS, or test it there first.  The easiest way to do this is to define `NO_SEMIHOSTING` and then modify crt0.S to check for the definition in the file and not run the semihosting bits of the code.
 
 ## Other modifications to crt0.S to consider
 
